@@ -48,19 +48,18 @@ public class StateCensusAnalyser {
                 CSVReader obj = new CSVReader(read);
                 String line = ((BufferedReader) read).readLine();
                 String[] header = line.split(",");
-
-                if(Arrays.equals(headerCheck,header)==true){
+                System.out.println(Arrays.toString(header));
+                System.out.println(Arrays.toString(headerCheck));
+                System.out.println(Arrays.equals(headerCheck,header));
+                if(Arrays.deepEquals(headerCheck,header)==true){
                     System.out.println("hurrrayyy");
                     return true;
                 }
                 else return false;
-
             }
         } catch (IOException | StateCensusException e) {
             throw new StateCensusException(e.getMessage());
         }
-
-
     }
 }
 

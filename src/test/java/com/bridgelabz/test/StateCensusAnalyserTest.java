@@ -54,17 +54,14 @@ public class StateCensusAnalyserTest {
         }
     }
     @Test
-    public void givenCorrectFileTypeButIncorrectHeaderrShouldReturnCustomException(){
+    public void givenCorrectFileTypeButIncorrectHeaderShouldReturnCustomException(){
         StateCensusAnalyser obj = new StateCensusAnalyser();
         try {
             String []header = {"State","Population","AreaInSqKm","DensityPerSqKm"} ;
             boolean checkHeader = obj.readHeader("E:\\Day29StateCencus\\src\\main\\resources\\IndiaStateCensusData.csv",header);
            Assert.assertTrue(checkHeader);
-
         }
         catch (StateCensusException e){
         }
     }
-
-
 }
